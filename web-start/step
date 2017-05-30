@@ -1,0 +1,20 @@
+notes
+steps
+1.) create a firebase project
+2.) get the web reference
+3.) install firebase npm -g install firebase-tools
+4.) use cmd 'firebase version' To verify that the CLI has been installed correctly
+5.) Enter 'firebase login' to Authorize the Firebase CLI 
+6.) Enter 'firebase use --add'  set up the Firebase CLI to use your Firebase Project
+7.) Enter 'firebase server' to start web app
+8.) Sets up shortcuts to Firebase features and initiate firebase auth.
+			FriendlyChat.prototype.initFirebase = function() {
+			  // Shortcuts to Firebase SDK features.
+			  this.auth = firebase.auth();
+			  this.database = firebase.database();
+			  this.storage = firebase.storage();
+			  // Initiates Firebase auth and listen to auth state changes.
+			  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+			};
+9.) Enter 'firebase database:set / ../initial_messages.json' to import json file too your database.Ensure to change the file url
+10.) Enter 'firebase depoly ' to host
